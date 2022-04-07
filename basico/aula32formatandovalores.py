@@ -1,0 +1,75 @@
+"""
+Aula 32- Formatando valores com modificadores
+
+:s - Texto (strings)
+:d - Inteiros (int)
+:f - Números ponto flutuante (float)
+:. (NUMERO) f - Quantidade de casas decimais float
+: (CARACTERE) (> ou < ou ^  ) (QUANTIDADE) (TIPO -s, d ou f)
+
+> - Esquerda
+< - Direita
+^ - Centro
+"""
+
+# num_1 = 10
+# num_2 = 3
+# div = num_1 / num_2
+#
+# print('{:.2f}'.format(div))
+# Na operação acima, foi utilizado o format para editar o resultado da função print.
+# print(f'{div:.2f}')
+# Já nesta parte do código, utilizamos o f''
+
+num_1 = 1
+
+print(f'{num_1:0>10}')
+# Este exemplo, define que o valor da variável "1" tenha 10 casas e que elas sejam preenchidas pelo valor 0.
+# num_1 = VALOR DA VARIÁVEL A SER IMPRESSA;
+# :  = DEFINE O INÍCIO DA EDIÇÃO;
+# 0  = O VALOR QUE VAI PREENCHER AS CASAS QUE EU VOU DEFINIR;
+# >  = A POSIÇÃO ONDE SERÁ ADICIONADO O NÚMERO DE CASAS (NESTE CASO, À ESQUERDA);
+# 10 = A QUANTIDADE DE CASAS ADICIONADAS (NESTE CASO, 10);
+#  R: 0000000001 /OBS: FORAM ADICIONADOS APENAS 9 ZEROS, POIS O NÚMERO 1 JÁ OCUPAVA 1 CASA DE 10.
+
+num_2 = 1150
+
+print(f'{num_2:0>10}')
+# NESTE CASO, O NUMERO 1150 JÁ ESTÁ PREENCHENDO 4 CASAS DE 10, E SERÃO ADICIONADOS APENAS 6 NUMEROS ZEROS.
+# R: 0000000115
+
+print(f'{num_2:0<10}')
+# AQUI, UTILIZAMOS O SINAL "MENOR QUE" PARA QUE AS CASAS FOSSEM PREENCHIDAS À DIREITA.
+# R: 1150000000
+
+print(f'{num_2:0^10}')
+# QUANDO UTILIZAMOS O SINAL DE CIRCUNFLEXO "^", O VALOR DA VARIAVEL É COLOCADO NO CENTRO E O PREENCHIMENTO É DIVIDIDO
+# ENTRE A ESQUERDA E A DIREITA DO VALOR.
+# R: 0001150000
+
+print(f'{num_2:.2f}')
+# ESTE MODIFICADOR IRÁ COLOCAR DUAS CASAS DECIMAIS NO NÚMERO, TRANSFORMANDO-O EM UM PONTO FLUTUANTE.
+# :  = INÍCIO DA MODIFICAÇÃO;
+# .  = O PONTO QUE SERÁ EXIBIDO NA TELA, MOSTRANDO QUE É UM NÚMERO FLOAT;
+# 2  = A QUANTIDADE DE CASAS DECIMAIS QUE SERÃO EXIBIDAS;
+# f  = DEFININDO O NÚMERO COMO PONTO FLUTUANTE.
+# R: 1150.00
+
+print(f'{num_2:0>10.2f}')
+# PODEMOS USAR OS DOIS TIPOS DE MODIFICADORES AO MESMO TEMPO. NESTE CASO, PEDIMOS QUE FOSSE APRESENTADO 10 CASAS DE
+# CARACTERES, SENDO QUE FOSSE COMPLETADO COM ZEROS À ESQUERDA E QUE FOSSE TRANSFORMADO EM UM FLOAT. FORAM ADICIONADOS
+# APENAS 3 ZEROS À ESQUERDA, POIS O NÚMERO 1150.00 OCUPOU 7 ESPAÇOS NA CADEIA DE CARACTERES.
+# R: 0001150.00
+
+nome = 'anildson'
+
+print(f'{nome:#^16}')
+# OS MODIFICADORES TABÉM PODEM SER UTILIZADOS COM STRINGS. NESTE CASO, O MODIFICADOR PEDE QUE SEJAM MOSTRADAS 16
+# CARACTERES, E OS ESPAÇOS SERÃO PREENCHIDOS COM "#". O DADO DA VARIÁVEL FICARÁ NO CENTRO. COMO O DADO JÁ OCUPOU 8
+# ESPAÇOS, ELE ADICIONOU MAIS 8 E OS DISTRIBUIU EM CADA LADO DO DADO.
+
+nome = 'anildson de sousa ribeiro'
+
+print(nome.upper())
+print(nome.lower())
+print(nome.title())
