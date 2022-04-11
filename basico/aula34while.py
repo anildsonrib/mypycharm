@@ -56,13 +56,61 @@ Ex: while 'condição':
 #  Similar a 'continue', nós temos o 'break'. Quando o interpretador a encontrar ele irá finalizar o loop e saltará para
 #  a próxima linha que estiver fora da hierarquia do loop.
 
-x = 0
+# x = 0
+#
+# while x < 5:
+#     if x == 3:      #  Assim que 'x' for igual a '3', o interpretador finaliza o laço e salta para a próxima linha fora
+                      #  dessa hierarquia, no caso, o print 'acabou!'
+        # x += 1
+        # break
+    # print(x)
+    # x += 1
+# print('Acabou!')
 
-while x < 5:
-    if x == 3:      #  Assim que 'x' for igual a '3', o interpretador finaliza o laço e salta para a próxima linha fora
-                    #  dessa hierarquia, no caso, o print 'acabou!'
-        x += 1
+#   Exemplo de MATRIZ.
+
+# y = 0
+# x = 0
+#
+# while x < 6:
+#     y = 0
+#
+#     while y < 6:
+#         print(f'({x},{y})')
+#         y += 1
+#
+#     x += 1
+#
+# print('Finished!')
+
+#   Calculadora com While.
+
+while True:
+    num_1 = input('Digite um num.: ')
+    num_2 = input('Digite outro num.: ')
+    op = input('Dig. um operador: ')
+
+
+    if not num_1.isdigit() or not num_2.isdigit():
+        print('Digite um número válido!!!')
+    else:
+        num_1 = int(num_1)
+        num_2 = int(num_2)
+
+    if op == '+':
+        print(num_1 + num_2)
         break
-    print(x)
-    x += 1
-print('Acabou!')
+    elif op == '-':
+        print(num_1 - num_2)
+        break
+    elif op == '/':
+        print(num_1 / num_2)
+        break
+    elif op == '*':
+        print(num_1 * num_2)
+        break
+
+    else:
+
+        print('')
+        print('Operador Inválido!!!')
