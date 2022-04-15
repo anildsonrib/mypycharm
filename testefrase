@@ -1,0 +1,17 @@
+# concatenar strings
+frase = 'o_rato_roeu_a_roupa_do_rei_de_roma'
+
+tamanho_frase = len(frase)
+nova_frase = ''
+contador_new = 0
+# isso que estamos fazendo com while é iteração
+while contador_new < tamanho_frase:
+    if frase[contador_new] == 'r':
+      nova_frase += 'R'
+    else:  
+      nova_frase += frase[contador_new]
+    contador_new += 1
+    print(nova_frase)
+
+print(f'Frase nova : {nova_frase}')
+print(contador_new)
