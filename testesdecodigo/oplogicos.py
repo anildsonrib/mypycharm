@@ -66,3 +66,5 @@ if usu == usu_bc and sen == sen_bc:
     print('Login realizado com sucesso: ')
 else:
     print('Usuário ou senha inválidos.')
+
+help(len)
