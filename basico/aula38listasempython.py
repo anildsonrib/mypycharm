@@ -338,3 +338,24 @@ for valor in l1:
 
 # **********************************************************************************************************************
 
+# JOGO DA FORCA:
+# Crie uma palavra secreta como um jogo da forca. Peça ao usuário para digitar uma letra e verifique se está contida na
+# palavra secreta. Se não estiver, retire uma chance do usuário. Dê apenas 3 chances de erro.
+
+pal_sec = 'avestruz'
+entradas = []
+
+while True:
+    dig = input('Digite uma letra: ')
+
+    if len(dig) >1:
+        print('Digite apenas uma letra.')
+        continue
+    entradas.append(dig)
+
+    if dig in pal_sec:
+        print(f'VOCÊ ACERTOU!!! A letra "{dig}" está na palavra secreta.')
+    else:
+        print(f'VOCÊ ERROU. A letra "{dig}" não existe na palavra secreta.')
+        entradas.pop()
+
