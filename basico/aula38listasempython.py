@@ -342,20 +342,60 @@ for valor in l1:
 # Crie uma palavra secreta como um jogo da forca. Peça ao usuário para digitar uma letra e verifique se está contida na
 # palavra secreta. Se não estiver, retire uma chance do usuário. Dê apenas 3 chances de erro.
 
-pal_sec = 'avestruz'
-entradas = []
+secreto = 'perfume'
+digitadas = []
+chances = 2
+
 
 while True:
-    dig = input('Digite uma letra: ')
+    if chances < 0:
+        print(f'\nVOCÊ PERDEU!!! Tente novamente.')
+        break
 
-    if len(dig) >1:
-        print('Digite apenas uma letra.')
+
+
+    letra = input('\nDigite uma letra: ')
+
+
+    if len(letra) > 1:
+        print('Digite apenas uma letra: ')
         continue
-    entradas.append(dig)
 
-    if dig in pal_sec:
-        print(f'VOCÊ ACERTOU!!! A letra "{dig}" está na palavra secreta.')
+
+
+    digitadas.append(letra)
+
+
+
+
+    if letra in secreto:
+        print(f'Muito bem, a letra "{letra}" existe na palavra secreta."')
     else:
-        print(f'VOCÊ ERROU. A letra "{dig}" não existe na palavra secreta.')
-        entradas.pop()
+        print(f'QUE PENA! Você errou, agora você tem apenas {chances} chances.')
+        digitadas.pop()
+
+
+    secreto_temporario = ''
+
+
+
+    for letra_secreta in secreto:
+        if letra_secreta in digitadas:
+            secreto_temporario += letra_secreta
+        else:
+            secreto_temporario += '*'
+
+
+
+    if secreto_temporario == secreto:
+        print(f'"{secreto_temporario.upper()}" \nPARABÉNS!!! Você venceu.')
+        break
+    else:
+        print(f'Palavra secreta: "{secreto_temporario}"')
+
+
+
+    if letra not in secreto:
+        chances -= 1
+
 
