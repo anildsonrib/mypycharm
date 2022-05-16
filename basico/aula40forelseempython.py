@@ -56,3 +56,7 @@ nomes = ['Anildson', 'Lucas', 'joão', 'Pedro', 'thiago', 'Hermanoteu']
 #     print('Não existe uma palavra que comeca com "J"')
 
 #======================================================================================================================
+
+from listanomes import nomes
+
+print(listanomes)
