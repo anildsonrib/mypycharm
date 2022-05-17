@@ -23,14 +23,33 @@ print(lista) R: ['O', 'brasil', 'é', 'o', 'país', 'do', 'futebol,', 'o', 'Bras
     A sintaxe de split: 'variável a ser separada'.split('parametro de separação')
                                                   string.split(' ')
 ------------------------------------------------------------------------------------------------------------------------
-* Join (juntar uma lista)
-* Enumerate (enumerar elementos de uma lista)
+* Join
+       :(juntar uma lista): O método join faz o trabalho inverso do método split. Determinamos um string separador
+        (separator), frequentemente chamado de cola (glue) e juntamos os elementos na lista utilizando a cola entre cada
+        par de elemento.
+Ex:
+lista = ["vermelho", "azul", "verde"] # lista a ser colada como uma string;
+cola = ';'  # 'glue', valor que irá separar os elementos da string
+s = cola.join(lista) # a variavel 's' receberá 'lista' como uma string, separando cada valor com a var 'cola' (;)
+print(lista) # R: ["vermelho", "azul", "verde"]
+print(s) # R: vermelho;azul;verde
 
+
+print("***".join(lista))   R: vermelho***azul***verde
+print(" ".join(lista))     R: vermelho azul verde
+print(","' '.join(lista))  R: vermelho, azul, verde
+
+
+
+
+* Enumerate (enumerar elementos de uma lista)
+            : A função enumerate() retorna uma tupla de dois elementos a cada iteração:
+              um número sequencial e um item da sequência correspondente. lista, não geram novas listas.
 ------------------------------------------------------------------------------------------------------------------------
 
 * Count
-         :A função count() retorna a quantidade de vezes que um mesmo elemento está contido numa lista. Essa é uma excelente
-    maneira que evita a implementação de um Laço de Repetição em busca de elementos iguais.
+         :A função count() retorna a quantidade de vezes que um mesmo elemento está contido numa lista. Essa é uma
+         excelente maneira que evita a implementação de um Laço de Repetição em busca de elementos iguais.
 
 Ex:
 texto = 'três pratos de trigo para três tigres tristes, três menos três é igual a um'
@@ -49,6 +68,8 @@ Strip:
 
 
 """
+
+#======================================================================================================================
 #======================================================================================================================
 
 # SPLIT:
@@ -56,6 +77,7 @@ Strip:
 
 string = 'O brasil é o país do futebol, o Brasil é penta'
 lista = string.split(' ')
+print('Exemplo de "SPLIT"')
 print(lista)
 print('')
 
@@ -68,6 +90,7 @@ print('')
 
 string = 'O brasil é o país do futebol, o Brasil é penta'
 lista_2 = string.split(',')
+print('Exemplo 2 de "SPLIT"')
 print(lista_2)
 print('')
 # R: ['O brasil é o país do futebol', ' o Brasil é penta']
@@ -78,6 +101,8 @@ print('')
 
 frase = 'O brasil é o país do futebol, o Brasil é penta'
 lista = frase.split(' ')
+
+print('Exemplo de "COUNT"')
 for valor in lista:
     print(f'A palavra "{valor}" apareceu {lista.count(valor)}x na frase.')
 print('')
@@ -103,6 +128,7 @@ lista = texto.split(' ')
 palavra = ''
 contagem = 0
 
+print('Exemplo 2 de "COUNT"')
 for valor in lista:
     qtd_vezes = lista.count(valor)
 
@@ -110,8 +136,59 @@ for valor in lista:
         contagem = qtd_vezes
         palavra = valor
 
-print(f'A palavra que apareceu mais vezes é {palavra} ({contagem}x).')
+print(f'A palavra que apareceu mais vezes é "{palavra}" ({contagem}x).')
+print('')
 
 # R: A palavra que apareceu mais vezes é uns (6x).
 
 #======================================================================================================================
+
+# STRIP:
+# Na seguinte frase "Penso, logo existo, e se existo, penso então" transforme-a em uma lista com a função 'split',
+# utilizando a virgula como parametro de divisão. Imprima cada valor separadamente, eliminando possiveis espaços no
+# inicio ou no final de cada valor com a função 'strip'. Os novos valores devem iniciar com letra maiúscula.
+
+frase = "Penso, logo existo, e se existo, penso então"
+lista = frase.split(',')
+
+print('Exemplo de "STRIP"')
+for valor in lista:
+    print(valor)
+    print(valor.strip().capitalize())
+print('')
+
+# R:
+# Penso
+# Penso
+#  logo existo
+# logo existo
+#  e se existo
+# e se existo
+#  penso então
+# penso então
+
+#======================================================================================================================
+
+# JOIN:
+# Na lista a seguir "['O', 'brasil', 'é', 'penta']", junte novamente os valores, transformando-os em uma string. Mostre
+# os valores na seguinte ordem: * lista original;
+#                               * a frase inteira, sem divisões;
+#                               * separada por virgulas;
+#                               * separadas por um '*'.
+
+string = 'O Brasil é penta'
+lista = string.split()
+
+print('Exemplo "JOIN"')
+print(lista)
+print(' '.join(lista))
+print(','.join(lista))
+print('*'.join(lista))
+
+# R: ['O', 'Brasil', 'é', 'penta']
+#    O Brasil é penta
+#    O,Brasil,é,penta
+#    O*Brasil*é*penta
+
+#======================================================================================================================
+
