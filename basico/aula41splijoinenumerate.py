@@ -38,13 +38,24 @@ print(s) # R: vermelho;azul;verde
 print("***".join(lista))   R: vermelho***azul***verde
 print(" ".join(lista))     R: vermelho azul verde
 print(","' '.join(lista))  R: vermelho, azul, verde
-
-
-
+------------------------------------------------------------------------------------------------------------------------
 
 * Enumerate (enumerar elementos de uma lista)
             : A função enumerate() retorna uma tupla de dois elementos a cada iteração:
               um número sequencial e um item da sequência correspondente. lista, não geram novas listas.
+Ex:
+
+texto = "O brasil é penta" # Variável recebendo uma string como argumento.
+lista_3 = texto.split(' ') # Função 'split' transforma a 'var' texto em uma lista contendo 4 valores. Utilizou o espaço
+                             como critério de divisão
+
+for ind, val in enumerate(lista_3): # A cada iteração na 'lista_3', a função 'enumerate' vai enumerar o índice atual e
+                                      atribuir esse valor à variavel 'ind' e atribuir o valor atual na variavel 'val'
+    print(ind, val) # R: 0 O
+                         1 brasil
+                         2 é
+                         3 penta
+
 ------------------------------------------------------------------------------------------------------------------------
 
 * Count
@@ -66,6 +77,22 @@ Strip:
         da string passado). O strip() método remove os caracteres da esquerda e da direita com base no argumento (uma
         string que especifica o conjunto de caracteres a ser removido).
 
+------------------------------------------------------------------------------------------------------------------------
+Lista dentro de lista:
+                        Em python, é possível colocar uma lista dentro de outra lista.
+Ex:
+lista = [        # Abre-se um colchete no início, coloca-se quantas listas quiser (cada uma dentro da sua própria chave,
+                   e cada lista separada por virgula) e no fim fecha-se a chave.
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+for v in lista:
+    print(v[0], v[1], v[2]) # A cada iteração do laço, o console irá mostrar o indice 0, 1 e 2 de cada sublista dentro
+                              da lista
+R:
+
 
 """
 
@@ -77,7 +104,7 @@ Strip:
 
 string = 'O brasil é o país do futebol, o Brasil é penta'
 lista = string.split(' ')
-print('Exemplo de "SPLIT"')
+print('Exemplo de "SPLIT": ')
 print(lista)
 print('')
 
@@ -90,7 +117,7 @@ print('')
 
 string = 'O brasil é o país do futebol, o Brasil é penta'
 lista_2 = string.split(',')
-print('Exemplo 2 de "SPLIT"')
+print('Exemplo 2 de "SPLIT": ')
 print(lista_2)
 print('')
 # R: ['O brasil é o país do futebol', ' o Brasil é penta']
@@ -102,7 +129,7 @@ print('')
 frase = 'O brasil é o país do futebol, o Brasil é penta'
 lista = frase.split(' ')
 
-print('Exemplo de "COUNT"')
+print('Exemplo de "COUNT": ')
 for valor in lista:
     print(f'A palavra "{valor}" apareceu {lista.count(valor)}x na frase.')
 print('')
@@ -128,7 +155,7 @@ lista = texto.split(' ')
 palavra = ''
 contagem = 0
 
-print('Exemplo 2 de "COUNT"')
+print('Exemplo 2 de "COUNT": ')
 for valor in lista:
     qtd_vezes = lista.count(valor)
 
@@ -151,7 +178,7 @@ print('')
 frase = "Penso, logo existo, e se existo, penso então"
 lista = frase.split(',')
 
-print('Exemplo de "STRIP"')
+print('Exemplo de "STRIP": ')
 for valor in lista:
     print(valor)
     print(valor.strip().capitalize())
@@ -179,11 +206,13 @@ print('')
 string = 'O Brasil é penta'
 lista = string.split()
 
-print('Exemplo "JOIN"')
+print('Exemplo "JOIN":')
 print(lista)
 print(' '.join(lista))
 print(','.join(lista))
 print('*'.join(lista))
+
+print('')
 
 # R: ['O', 'Brasil', 'é', 'penta']
 #    O Brasil é penta
@@ -192,3 +221,31 @@ print('*'.join(lista))
 
 #======================================================================================================================
 
+# ENUMERATE:
+# Com o seguinte texto "O brasil é penta", crie um lista e mostre cada um dos seus valores enumerados de acordo com seus
+# indices.
+
+texto = "O brasil é penta"
+lista_3 = texto.split(' ')
+
+print('Exemplo ENUMERATE: ')
+for ind, val in enumerate(lista_3):
+    print(ind, val)
+print('')
+
+#======================================================================================================================
+
+# Lista dentro de lista:
+# Crie uma lista que tenha dentro ela outras 3 sublistas com 3 valores, ([1,2,3], [4,5,6]... até 9). Itere sobre os
+# valores destas listas e mostre no console de acordo com cada índide delas.
+
+lista = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+print('Exemplo lista dentro de lista:')
+for v in lista:
+     print(v[0], v[1], v[2])
+
+#======================================================================================================================
