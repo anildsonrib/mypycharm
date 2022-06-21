@@ -11,6 +11,9 @@
 
 * A informação contida dentro do comando 'print' é chamada de argumento. Argumentos são tipos de dados.
 
+* O python diferencia letras minúsculas das maiúsculas, e a função print não pode começar com a letra maiúscula, senão
+o código acusará um erro.
+
 Ex:
     print(123456) # Tudo que for colocado entre parenteses será exibido na tela.
     R: 123456
@@ -138,3 +141,17 @@ print('e você não apareceu.')
 print('')
 print('5 - Te esperei o dia inteiro ', end='// ')
 print('e você não apareceu.')
+print('')
+
+#======================================================================================================================
+
+# END E SEP
+
+# "João e maria"
+# "correram pelo bosque."
+
+# Utilizando dois prints, exiba essas frases na mesma linha, onde as palavras estarão separadas por um traço e as frases
+# separadas por três asteriscos.
+
+print('João', 'e', 'maria', sep='-', end='***')
+print('correram', 'pelo', 'bosque.', sep='-')
