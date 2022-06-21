@@ -1,0 +1,53 @@
+"""
+Faça uma lista de tarefas com as seguintes opções:
+    Adicionar tarefa
+    Listar Tarefas
+    Opção de desfazer (a cada vez que chamarmos, desfaz a última ação)
+    Opção de refazer (a cada vez que chamarmos, refaz a última ação)
+['Tarefa 1', 'Tarefa 2'] <- adicionando tarefa
+['Tarefa 1'] <- Desfazer (irá remover a última ação)
+['Tarefa 1', 'Tarefa 2'] <- Refazer (irá retornar uma ação)
+While True
+    input <= Nova Tarefa
+    Adiciona a tarefa e desfaz ou refaz
+Variavel para receber a tarefa, ou undo (para desfazer) ou redo (refazer) e algo para listar as tarefas
+"""
+
+def undo(lista_tarefas, backup):
+    last_move = lista_tarefas.pop()
+    backup.append(last_move)
+
+def redo(lista_tarefa, backup):
+    last_move = backup.pop()
+    lista_tarefa.append(last_move)
+
+def mostrar_tarefas(lista_tarefas):
+    print(f'\nTarefas: ')
+    print(lista_tarefas)
+    print('')
+
+def adiciona_lista(variavel, lista_tarefas):
+    lista_tarefas.append(variavel)
+
+lista_tarefas = []
+redo_tarefas = []
+
+print('#' * 20, 'Exercício Undo e Redo', '#' * 20)
+print('')
+while True:
+    print('Lista sua tarefa! Ou escreva undo (desfazer) ou redo (refazer) a última tarefa! ou list(para listar as tarefas!)')
+    print('Digite esc para sair!')
+    tarefa = input('Escreva: ')
+
+    if tarefa == 'esc':
+        break
+    if tarefa == 'list':
+        mostrar_tarefas(lista_tarefas)
+        continue
+    elif tarefa == 'undo':
+        undo(lista_tarefas, redo_tarefas)
+        continue
+    elif tarefa == 'redo':
+        redo(lista_tarefas,redo_tarefas)
+        continue
+    adiciona_lista(tarefa,lista_tarefas)
