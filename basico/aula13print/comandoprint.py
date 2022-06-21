@@ -21,8 +21,8 @@ Ex:
                 É um parâmetro de função que especifica como os objetos serão separados, se houver mais do que um. O
                 padrão é um espaço em branco.
 Ex:
-    print('Anildson', 'Sousa', 'Ribeiro', sep='*') # O parametro nomeado 'sep' definiu que os argumentos dentro da
-                                                     função print seriam separados por um asterisco.
+    print('Anildson', 'Sousa', 'Ribeiro', sep='*') # O parametro (argumento nomeado) 'sep' definiu que os argumentos
+                                                     dentro da função print seriam separados por um asterisco.
 
 R: Anildson*Sousa*Ribeiro.
 
@@ -116,5 +116,25 @@ print('')
 
 # END
 
-# "Te esperei o dia inteiro, "
+# "Te esperei o dia inteiro "
 # "e você não apareceu."
+
+# 1 - Mostre no console as frases em linhas separadas (dois prints);
+# 2 - Mostre no console as frases em linhas separadas (utilizando a quebra de linha);
+# 3 - Mostre as frases na mesma linha (utilizando dois prints);
+# 4 - Mostre as frases separadas por vírgula;
+# 5 - Mostre as frases separadas por barras duplas;
+
+print('1 - Te esperei o dia inteiro ')
+print('e você não apareceu.')
+print('')
+print('2 - Te esperei o dia inteiro', '\ne você não apareceu.')
+print('')
+print('3 - Te esperei o dia inteiro', end=' ')
+print('e você não apareceu.')
+print('')
+print('4 - Te esperei o dia inteiro', end=', ')
+print('e você não apareceu.')
+print('')
+print('5 - Te esperei o dia inteiro ', end='// ')
+print('e você não apareceu.')

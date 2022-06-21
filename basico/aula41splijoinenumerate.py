@@ -81,7 +81,7 @@ Strip:
 Lista dentro de lista:
                         Em python, é possível colocar uma lista dentro de outra lista.
 Ex:
-lista = [        # Abre-se um colchete no início, coloca-se quantas listas quiser (cada uma dentro da sua própria chave,
+lista = [        # Abre-se um colchete no início, coloca-se quantas listas quiser (cada uma dentro do seu pró´rio colchete,
                    e cada lista separada por virgula) e no fim fecha-se a chave.
     [1,2,3],
     [4,5,6],
