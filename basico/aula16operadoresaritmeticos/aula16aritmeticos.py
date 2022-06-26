@@ -43,7 +43,7 @@ Operadores de associação
 ------------------------------------------------------------------------------------------------------------------------
 
 "/" = Divisão, é representada por uma barra e realiza a divisão entre dois números, retornando um resultado de ponto
-      flutuante (resto da divisão).
+      flutuante.
     print(5 / 2) => R: 2.5
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -93,12 +93,27 @@ Operadores de associação
                        Ex:
                        print(3 + '5') # R: error
 ------------------------------------------------------------------------------------------------------------------------
+* "()" Parenteses para precedência dos operadores:
+                                                   Agora que já vimos uma porção de operadores matemáticos, é pertinente
+                                                   falar sobre as regras de precedência que regem a ordem de avaliação
+                                                   das operações dentro de uma expressão matemática. Python segue a
+                                                   mesma convenção usada na matemática; a ordem de avaliação dos
+                                                   operadores, do de maior precedência para o de menor precedência, é a
+                                                   seguinte:
 
+1- Parênteses
+2- Exponenciação
+3- Multiplicação e divisão, que possuem a mesma precedência
+4- Adição e subtração, que possuem a mesma precedência
 
-------------------------------------------------------------------------------------------------------------------------
+                                                    Usamos parênteses para forçar que uma expressão seja avaliada em uma
+                                                    determinada ordem desejada.
+                                                    Ex.: print(2 * (3-1)) = 4, mas...
+                                                         print(2 * 3 - 1) = 5.
 
-
-------------------------------------------------------------------------------------------------------------------------
+Operadores com a mesma precedência são avaliados da esquerda para a direita. Ex: (10 / 2 * 2 = 10) e (10 / (2 * 2) = 2.5).
+Mas há uma exceção para essa regra: a exponenciação. Ex: 2**3**2 equivale a 2**(3**2) que é 512; note que isso é
+diferente de (2**3)**2, que é 64.
 
 
 """
@@ -152,30 +167,14 @@ print(3 * 'Olá! ')
 print('')
 #======================================================================================================================
 
+# PRECEDÊNCIA DE OPERAÇÃO
 
+# Alterando a precedência de operação, escreva um código onde, 2*5-2 = 8, passe a ser igual a 6.
 
+#print(2 * 5 - 2) # 8
+print(2 * (5 - 2))
 
-
-#======================================================================================================================
-
-
-
-
-
-#======================================================================================================================
-
-
-
-
-#======================================================================================================================
-
-
-
-
-#======================================================================================================================
-
-
-
+# R: 6
 
 #======================================================================================================================
 
@@ -183,4 +182,3 @@ print('')
 
 
 
-#======================================================================================================================
